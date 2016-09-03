@@ -10,6 +10,10 @@ Toda la información aquí contenida se encuentra bajo distintas licencias, sien
 
 Sin embargo, así como la hemos compartido nosotros, podés compartirla vos sin inconvenientes. Basta con hacer referencia a este repositorio o a [la web](http://comovotamos.org).
 
+## Descargar
+
+Si querés descargar toda la información aquí presente, dale click al botón verde arriba a la derecha *Clone or Download*, o bien, [click aquí](/archive/master.zip).
+
 ## Colaborar
 
 Si considerás que cometimos un error, alguna información se encuentra incompleta, faltan fuentes de información o querés agregár información, podés hacerlo creando un [incidente en esta plataforma](https://github.com/comovotamos/votoelectronico-data/issues) (para los nerds: o bien un Pull Request).

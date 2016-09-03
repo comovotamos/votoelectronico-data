@@ -1,0 +1,3 @@
+Fuente: https://blogs.ncl.ac.uk/security/2016/02/15/real-world-electronic-voting-design-analysis-and-deployment/
+
+Fuente Capítulo 7 por J. Alex Halderman: https://jhalderm.com/pub/papers/ch7-evoting-attacks-2016.pdf

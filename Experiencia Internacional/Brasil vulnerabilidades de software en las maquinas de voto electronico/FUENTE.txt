@@ -1,0 +1,8 @@
+Fuente: http://ivan.barreraoro.com.ar/2015/09/brasil-vulnerabilidades-de-software-en-las-maquinas-de-voto-electronico/
+
+
+Informe:
+https://archive.org/details/vulnerabilities_brazilian_voting_machine
+https://sites.google.com/site/dfaranha/pubs/aranha-karam-miranda-scarel-12-book
+
+Presentación: https://www.usenix.org/sites/default/files/conference/protected-files/aranha_evt12_slides.pdf

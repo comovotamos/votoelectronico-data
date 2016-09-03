@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Vot.Ar: una mala elección</title>
+<meta name="author" content="Iván A. Barrera Oro">
+<meta name="description" content="Vot.Ar: una mala elección. Presentación para la EKOparty #11, oct 2015">
+<link rel="icon" href="http://ivan.barreraoro.com.ar/presentation/ekoparty11/img/logo.png" sizes="196x196" type="image/png">
+<link href="index_files/reset.css" rel="stylesheet">
+<link href="index_files/presentation.css" rel="stylesheet">
+<link href="index_files/opensans.css" rel="stylesheet">
+<link href="index_files/oswald.css" rel="stylesheet">
+<link href="index_files/anonymouspro.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hackancuba">
+<meta name="twitter:title" content="Vot.Ar: una mala elección">
+<meta name="twitter:description" content="Presentación para la #eko11, oct 2015">
+<meta name="twitter:image" content="img/logo.png">
+<meta property="og:title" content="Vot.Ar: una mala elección">
+<meta property="og:description" content="Presentación para la #eko11, oct 2015">
+<meta property="og:locale" content="es_AR">
+</head>
+<body style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+<div class="fallback-message">
+<p>Tu navegador <em>no soporta las características requeridas</em> por esta presentación, por lo que se mostrará una versión simplificada.</p>
+<p>Para obtener una mejor experiencia, utiliza <strong>Firefox</strong>, <strong>Chrome</strong> o <strong>Safari</strong>.</p>
+</div>
+<div style="position: absolute; transform-origin: left top 0px; transition: all 0ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(3000px) scale(0.333333);" id="impress"><div style="position: absolute; transform-origin: left top 0px; transition: all 0ms ease-in-out 0ms; transform-style: preserve-3d; transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg) translate3d(0px, 0px, 0px);">
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); transform-style: preserve-3d;" id="title" class="step anim active present" data-x="0" data-y="0" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="3">
+<h1 class="centered">Vot.Ar: una mala elección</h1>
+<h3>Presentación sobre el sistema <i class="flag-blue">Vot.Ar</i> (o BUE), su HW, SW y Vulnerabilidades.</h3>
+<br><br>
+<p>Y también, un poco sobre <i>voto electrónico</i>.</p>
+<p class="footnote"><a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/VotArUnaMalaEleccion">#VotArUnaMalaEleccion</a> <a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/eko11">#eko11</a></p>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, 550px, -300px) rotateX(-40deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-2" class="step future" data-x="23000" data-y="550" data-z="-300" data-rotate-x="-40" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>¿Cómo lo hicimos?</h2>
+<ul>
+<li>Cerca de una semana de trabajo.</li>
+<li><strong>No oficial</strong>: ninguna asistencia fue proporcionada por la empresa ni el gob.</li>
+<li>Yendo a puntos de consulta públicos para tener acceso a máquinas y boletas.</li>
+</ul>
+<div class="centered"><img src="index_files/consultation-point.jpg" alt="Public constultation point" height="300" width="533"></div>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, 1200px, -700px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-3" class="step future" data-x="23000" data-y="1200" data-z="-700" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<ul>
+<li>Construyendo algunos dispositivos:
+<ul>
+<li>lector de boletas</li>
+<li>quemador de boletas</li>
+<li>RFID jammer</li>
+</ul>
+(algunos funcionaron, otros no)
+</li>
+<li>Mucha investigación en internet (gracias al código fuente y fotos filtradas)</li>
+<li>Gran esfuerzo</li>
+</ul>
+</div>
+ 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, 2250px, -300px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-4" class="step anim future" data-x="23000" data-y="2250" data-z="-300" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p><strong>Vot.Ar</strong> o <strong>BUE</strong> (Boleta Única Electrónica), hecho por el Grupo MSA, es un sistema de voto electrónico que cuenta con dos elementos principales:</p>
+<ul>
+<li>La máquina emisora/contadora de votos</li>
+<li>La boleta</li>
+</ul>
+<br>
+<p><b class="scaling pastel-red">¿Su vulnerabilidad más evidente?</b></p>
+<p class="footnote pastel-red">entre otras...</p>
+</div> 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, 2250px, -300px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-5" class="step hidden future" data-x="23000" data-y="2250" data-z="-300" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<div style="position: absolute; top: 40px; left: 580px;">
+<div class="overlay-img-txt txt-tiny pale-yellow">
+<img src="index_files/facepalm.jpg" alt="facepalm" height="225" width="300">
+<span>¡Está basado en RFID!</span>
+</div>
+</div>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(24100px, 2250px, -300px) rotateX(0deg) rotateY(-25deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-6" class="step hidden future" data-x="24100" data-y="2250" data-z="-300" data-rotate-x="0" data-rotate-y="-25" data-rotate-z="0" data-scale="1">
+<p>¿Por qué usar RFID es tan mala idea?</p>
+<img src="index_files/evoting-rfid.jpg" alt="e-voting rfid" height="625" width="1050">
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(24100px, 3350px, -300px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="req" class="step anim future" data-x="24100" data-y="3350" data-z="-300" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>Requerimientos de Vot.Ar (según su patente y la Ley)</h2>
+<ol>
+<li><strong>Universal</strong>*</li>
+<li><strong>Igual</strong>*</li>
+<li class="pastel-red"><strong>Secreto</strong>*</li>
+<li><strong>Obligatorio</strong>*</li>
+<li>Libre</li>
+<li class="pastel-red">Un voto por elector</li>
+</ol>
+<p class="footnote">* Derechos Constitucionales</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(24100px, 4350px, -300px) rotateX(0deg) rotateY(10deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-8" class="step future" data-x="24100" data-y="4350" data-z="-300" data-rotate-x="0" data-rotate-y="10" data-rotate-z="0" data-scale="1">
+<h2>Cosas a tener en cuenta respecto de Vot.Ar</h2>
+<ul>
+<li>HW y SW completamente cerrado (<em>black box</em>).</li>
+<li>Absolutamente nada de documentación pública: ¡así y todo los creadores dicen que es código abierto!</li>
+<li>Más de <strong>7 años de desarrollo</strong>:
+<ul>
+<li>Usado en Salta (y auditado allí)</li>
+<li>Recientemente usado en las capitales de Chaco y Neuquén</li>
+</ul>
+</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(25500px, 4465px, -300px) rotateX(0deg) rotateY(20deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-9" class="step future" data-x="25500" data-y="4465" data-z="-300" data-rotate-x="0" data-rotate-y="20" data-rotate-z="0" data-scale="1">
+<ul>
+<li>2 auditorias oficiales al momento del informe (junio/julio 2015):
+<ul>
+<li>Prof. Righetti, FCEN, UBA: OAT 03/15
+<br><strong>Conclusión</strong>: <em>algunos inconvenientes, pero ok</em>.</li>
+<li>Departamento de Informática, ITBA: DVT 56-504
+<br><strong>Conclusión</strong>: <em>inconcluyente, recomendaciones dadas</em>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(24100px, 5365px, -300px) rotateX(0deg) rotateY(10deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-10" class="step future" data-x="24100" data-y="5365" data-z="-300" data-rotate-x="0" data-rotate-y="10" data-rotate-z="0" data-scale="1">
+<ul>
+<li>¡Una <strong>grave falla de seguridad</strong> deja al descubierto los <em>certificados SSL</em> empleados para asegurar la transmisión de resultados!</li>
+<li>Un programador independiente, <a href="https://twitter.com/_joac" class="link">Joaquín Sorianello</a>, reporta esta falla a la empresa, solo para ser <strong>allanado por la policía dos días antes de los comicios y por la tarde/noche</strong>.</li>
+<li>Asimismo, hackeos independientes ocurren, provocando la fuga de 
+datos personales de los técnicos de la empresa, motivo por el cual una 
+Jueza decide <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">bloquear</a> el sitio <a class="link" href="https://justpaste.it/">justpaste.it</a> donde residía esta información.</li>
+</ul>
+</div>
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(26700px, 6665px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(10deg) scale(3); transform-style: preserve-3d;" id="timeline" class="step future" data-x="26700" data-y="6665" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="10" data-scale="3">
+<img src="index_files/timeline-1.png" alt="Timeline" height="780" width="1032">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(29800px, 7213px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(10deg) scale(3); transform-style: preserve-3d;" id="step-12" class="step future" data-x="29800" data-y="7213" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="10" data-scale="3">
+<img src="index_files/timeline-2.png" alt="Timeline" height="780" width="1100">
+</div>
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(31800px, 7913px, -200px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-13" class="step anim future" data-x="31800" data-y="7913" data-z="-200" data-rotate-x="0" data-rotate-y="30" data-rotate-z="0" data-scale="2">
+<p><strong>El sistema aquí reportado es tal cual fue usado en las elecciones de este año</strong> en la CABA</p>
+</div>
+ 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35800px, 8113px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="macro" class="step future" data-x="35800" data-y="8113" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>Visión general de Vot.Ar</h2>
+<img src="index_files/overview.png" alt="overview" height="700" width="700">
+<p class="txt-reduced">Unidad portable, algo más grande que un maletín</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(34900px, 8113px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(-10deg) scale(1); transform-style: preserve-3d;" id="step-15" class="step anim future" data-x="34900" data-y="8113" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-10" data-scale="1">
+<p>Tiene a la izquierda:</p>
+<ul>
+<li>Pantalla táctil para operar<br>(elegir candidatos y demás)</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(36450px, 8113px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(10deg) scale(1); transform-style: preserve-3d;" id="step-16" class="step anim future" data-x="36450" data-y="8113" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="10" data-scale="1">
+<p>Tiene a la derecha:</p>
+<ul>
+<li>Slot de boleta: un lector/escritor RFID + impresora térmica</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35600px, 7413px, -200px) rotateX(30deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-17" class="step future" data-x="35600" data-y="7413" data-z="-200" data-rotate-x="30" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>Tiene arriba:</p>
+<ul>
+<li>
+DVD R/W, LEDs de estado y puertos:
+<table>
+<tbody><tr>
+<td>
+<ul>
+<li><em>USB *</em></li>
+<li>SVGA</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Ethernet</li>
+<li>Speaker</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+accesible por todos, bajo una pequeña tapa
+</li>
+</ul>
+<p class="footnote">* BadUSB?...</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 8813px, -200px) rotateX(-30deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-18" class="step future" data-x="35700" data-y="8813" data-z="-200" data-rotate-x="-30" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>Tiene por debajo:</p>
+<ul>
+<li>una fuente de alimentación + 2 packs de baterías</li>
+<li>y a veces, ¡un cable JTAG!</li>
+</ul>
+</div>
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 9233px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-19" class="step future" data-x="35700" data-y="9233" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>Luego está la boleta, que tiene un chip RFID + papel térmico al dorso.</p>
+<p>También cuenta con un troquel en una esquina, para verificar que la boleta no haya sido intercambiada.</p>
+<p class="footnote">Enseguida los detalles...</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 9653px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-20" class="step future" data-x="35700" data-y="9653" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>Pero la propaganda decía:</p>
+<q>¡Es una impresora, no una computadora!</q>
+<p><small>¡y todos lo creyeron!</small></p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 10063px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-21" class="step future" data-x="35700" data-y="10063" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<video controls="controls" height="480" width="854">
+<source src="index_files/es_una_impresora.asc" type="video/webm">
+Montenegro y Angelini: Es una impresora.
+</video>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 10973px, -200px) rotateX(10deg) rotateY(0deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-22" class="step future" data-x="35700" data-y="10973" data-z="-200" data-rotate-x="10" data-rotate-y="0" data-rotate-z="0" data-scale="2">
+<div class="overlay-img-txt centered">
+<img src="index_files/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" height="652" width="1219">
+<span class="bottom flag-blue txt-reduced">Así que acá tuiteabamos, desde una "impresora"...</span>
+</div>
+</div>
+ 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 12673px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-23" class="step future" data-x="35700" data-y="12673" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2 class="centered">Vistazo rápido: Abriendo la mesa</h2>
+<ul>
+<li>La empresa provee de máquinas y de un grupo de técnicos.</li>
+<li>Los técnicos poseen credencial (chip RFID).</li>
+<li>La Autoridad Electoral provee el DVD en sobre lacrado junto a la credencial de Pte. de Mesa (c/ chip RFID) y datos de Log-in.</li>
+</ul>
+<div class="overlay-img-txt centered">
+<img src="index_files/dvd.jpg" alt="DVDs and President Id card" height="281" width="500">
+<span class="txt-reduced pale-yellow">Credenciales y DVDs</span>
+</div>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(35700px, 13773px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-24" class="step future" data-x="35700" data-y="13773" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<ol>
+<li>Encender la máquina e insertar el DVD.</li>
+<li>Seguir las instrucciones para calibrar la pantalla táctil.</li>
+<li>Usar credencial de Presidente para abrir pantalla de inicio, ingresar # mesa y PIN.</li>
+<li>Seleccionar la opción de Apertura de Mesa, ingresar la información solicitada.</li>
+<li>Insertar boleta especial que se imprimirá con los nombres del 
+Presidente y Fiscales, la hora de apertura y un código QR conteniendo 
+esa misma info, que también se grabará en el chip.</li>
+</ol>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(36900px, 13773px, -200px) rotateX(15deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-25" class="step future" data-x="36900" data-y="13773" data-z="-200" data-rotate-x="15" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2 class="centered">Vistazo rápido: Votando</h2>
+<table>
+<tbody><tr>
+<td>
+<ol>
+<li>Presentarse en la mesa, entregar DNI y obtener la boleta:<br>El Presidente de Mesa rentendrá una parte del troquel.</li>
+</ol>
+</td>
+<td>
+<div class="overlay-img-txt centered">
+<img src="index_files/ballot-front.jpg" alt="Ballot" height="120" width="320">
+<span class="soft-green">1</span>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<ol start="2">
+<li>Boleta en mano, dirigirse a la máquina.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="3">
+<li>Insertar la boleta en el slot:</li>
+</ol>
+</td>
+<td>
+<div class="overlay-img-txt centered">
+<img src="index_files/inserting-ballot.jpg" alt="Inserting ballot" height="320" width="180">
+<span class="soft-green">3</span>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(36900px, 15023px, -200px) rotateX(15deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-26" class="step future" data-x="36900" data-y="15023" data-z="-200" data-rotate-x="15" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<table>
+<tbody><tr>
+<td>
+<ol start="4">
+<li>Elegir candidato o lista en la pantalla:</li>
+</ol>
+</td>
+<td>
+<div class="overlay-img-txt centered">
+<img src="index_files/picking-candidate.jpg" alt="Picking candidate" height="250" width="180">
+<span class="soft-green">4</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="5">
+<li>Al terminar, seleccionar la opción de votar (imprime la boleta y graba el chip). Retirar la boleta del slot.</li>
+</ol>
+</td>
+<td>
+<div class="overlay-img-txt centered">
+<img src="index_files/ballot-back.jpg" alt="Ballot printed" height="131" width="320">
+<span class="soft-green">5</span>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<ol start="6">
+<li>Acercar la boleta al lector (o insertarla nuevamente) para verificar el voto, doblarla y volver a la mesa.</li>
+<li>El Presidente verificará y removerá la otra parte del troquel. Luego, depositar la boleta en la urna y recuperar el DNI.</li>
+</ol>
+</td>
+</tr>
+</tbody></table>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(38100px, 15023px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-27" class="step future" data-x="38100" data-y="15023" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2 class="centered">Vistazo rápido: Cerrando la mesa</h2>
+<p>Al término de la votación (18hs):</p>
+<ol>
+<li>Iniciar sesión como Presidente.</li>
+<li>Insertar la Boleta de Apertura de Mesa.</li>
+<li>Seleccionar la opción de Cierre de Mesa, ingresar la hora actual.</li>
+<li>Insertar boleta especial de Cierre que tendrá información similar a la de Apertura.</li>
+</ol>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(39300px, 15023px, -200px) rotateX(-15deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-28" class="step future" data-x="39300" data-y="15023" data-z="-200" data-rotate-x="-15" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2 class="centered">Vistazo rápido: Escrutinio</h2>
+<ol>
+<li>Inmediatamente luego de cerrar la mesa, se activa el modo escrutinio.</li>
+<li>Elegir una boleta de la urna, verificar impresión y que no tenga marcas extrañas.</li>
+<li>Acercarla a la máquina para contabilizarla.</li>
+<li>Repetir para toda la urna.</li>
+<li>Al terminar, insertar boleta especial que será impresa con el 
+resultado del escrutinio. Se pueden imprimir tantas como se necesiten.</li>
+<li>Ahora debe insertarse una Boleta de Transimisón de Escrutinio para continuar.</li>
+</ol>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(40500px, 15023px, -200px) rotateX(-30deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-29" class="step future" data-x="40500" data-y="15023" data-z="-200" data-rotate-x="-30" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2 class="centered">Vistazo rápido: Transmisión del escrutinio</h2>
+<ol>
+<li>Conectar la máquina a la LAN.</li>
+<li>Insertar boleta especial.</li>
+<li>¿¿¿???</li>
+</ol>
+<p>No hemos podido obtener información respecto de este punto.</p>
+<p>Durante nuestras pruebas, no logramos crear una boleta especial de 
+transmisión, por lo que nunca pudimos completar este procedimiento.</p>
+</div>
+ 
+ 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(40500px, 16523px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="hwdeep" class="step future" data-x="40500" data-y="16523" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>Ahora veamos el HW en profundidad</h2>
+<p>¿Qué hay dentro de la máquina?</p>
+<img src="index_files/inside.jpg" alt="Inside the machine" height="645" width="1000">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(41700px, 16823px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(25deg) scale(1); transform-style: preserve-3d;" id="step-31" class="step future" data-x="41700" data-y="16823" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="25" data-scale="1">
+<p>Más adentro (detrás de la pantalla):</p>
+<img src="index_files/inside-behind.jpg" alt="Behind the inside of the machine" height="735" width="1000">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(42500px, 17573px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(50deg) scale(1); transform-style: preserve-3d;" id="step-32" class="step future" data-x="42500" data-y="17573" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="50" data-scale="1">
+<ul>
+<li>Puerto JTAG: se usa para programar/debuggear el microcontrolador.
+Acceso externo a través de un cable cerca de las baterías.</li>
+</ul>
+<div class="overlay-img-txt centered">
+<img src="index_files/jtag-elections.jpg" alt="JTAG exposed during elections" height="435" width="580">
+<span class="soft-green txt-tiny">¡Algunas lo tenían durante las elecciones!</span>
+<span class="bottom threat">Threat level: <i class="pastel-red">high</i></span> 
+</div>
+<p class="txt-tiny centered pastel-red">¡Puede usarse para reprogramar el uC!</p>
+<p class="footnote">Más sobre esto en el <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar">blog de Javier</a></p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(41300px, 17473px, -200px) rotateX(25deg) rotateY(0deg) rotateZ(25deg) scale(1); transform-style: preserve-3d;" id="step-33" class="step anim future" data-x="41300" data-y="17473" data-z="-200" data-rotate-x="25" data-rotate-y="0" data-rotate-z="25" data-scale="1">
+<ul>
+<li>Microprocessor (uP): Intel(R) Celeron(R) CPU N2930 @ 1.83GHz</li>
+<li>RAM memory: 2GB DDR3 1600</li>
+<li>Microcontroller (uC): Atmel AT91SAM7X256
+<ul>
+<li>Internal E2PROM memory: 256KB <b class="positioning">(!)</b></li>
+</ul>
+</li>
+</ul>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(41300px, 18273px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-34" class="step future" data-x="41300" data-y="18273" data-z="-200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>Así que, encontramos un subsistema desconocido:</p>
+<img src="index_files/secret-uc.png" alt="Secret microcontroller" height="582" width="568">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(41800px, 18323px, -200px) rotateX(0deg) rotateY(10deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-35" class="step anim future" data-x="41800" data-y="18323" data-z="-200" data-rotate-x="0" data-rotate-y="10" data-rotate-z="0" data-scale="1">
+<p>El uC ARM controla la impresora térmica y el lector/escritor RFID.</p>
+<p>Su memoria E2PROM interna es <b class="scaling-right">suficiente para almacenar</b><br>todos los votos emitidos y más.</p>
+<p>No sabemos <em>nada</em>, Jon Snow!</p>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(43100px, 18723px, -350px) rotateX(0deg) rotateY(20deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-36" class="step future" data-x="43100" data-y="18723" data-z="-350" data-rotate-x="0" data-rotate-y="20" data-rotate-z="0" data-scale="1">
+<h3>Sobre las boletas (BUE)</h3>
+<img src="index_files/ballot.jpg" alt="Ballot" height="732" width="1000">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(45100px, 18823px, -800px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-37" class="step future" data-x="45100" data-y="18823" data-z="-800" data-rotate-x="0" data-rotate-y="30" data-rotate-z="0" data-scale="2">
+<ul>
+<li>Papel grueso impreso en el frente y papel térmico + chip RFID en el dorso.</li>
+<li>Una delgada lámina metálica protege al chip de ser leído cuando la boleta se encuentra <em>perfectamente</em> doblada sobre sí misma.</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48100px, 19823px, -800px) rotateX(0deg) rotateY(40deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-38" class="step future" data-x="48100" data-y="19823" data-z="-800" data-rotate-x="0" data-rotate-y="40" data-rotate-z="0" data-scale="2">
+<img src="index_files/patente.jpg" alt="Patente voto electronico" height="794" width="1000">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46350px, 21523px, -800px) rotateX(-10deg) rotateY(10deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-39" class="step future" data-x="46350" data-y="21523" data-z="-800" data-rotate-x="-10" data-rotate-y="10" data-rotate-z="0" data-scale="1">
+<h3>El chip RFID</h3>
+<table class="white-row">
+<tbody><tr>
+<th>Marca</th>
+<th>Modelo</th>
+<th>Memoria (Bytes)</th>
+<th>Nota</th>
+</tr>
+<tr>
+<td>NXP</td>
+<td>ICODE SLI SL2ICS20 o SLIX SL2S2002 (ISO 15693)</td>
+<td>112</td>
+<td>código ID único</td>
+</tr>
+</tbody></table>
+<table class="white-row">
+<tbody><tr>
+<th colspan="3">Categorías de Tag</th>
+</tr>
+<tr>
+<td>Tag Vacío 0x0000</td>
+<td>Voto 0x0001</td>
+<td>Técnico MSA 0x0002</td>
+</tr>
+<tr>
+<td>Presidente de Mesa 0x0003</td>
+<td>Escrutinio Finalizado 0x0004</td>
+<td>Apertura de Mesa 0x0005</td>
+</tr>
+<tr>
+<td>Demostración 0x0006</td>
+<td>Transmisión de Escrutinio 0x007F</td>
+<td></td>
+</tr>
+<tr>
+<td>Tag Virgen 0x0007 (?)</td>
+<td>Addendum 0x007F (?)</td>
+<td>Tag desconocido 0xFFFF (?)</td>
+</tr>
+</tbody></table>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46350px, 22523px, -800px) rotateX(0deg) rotateY(10deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-40" class="step future" data-x="46350" data-y="22523" data-z="-800" data-rotate-x="0" data-rotate-y="10" data-rotate-z="0" data-scale="1">
+<h4>Estructura de datos dentro del Tag</h4>
+<code>K1 T2 T1 L1 C4 C3 C2 C1 D1...Dn W1 W2 W3 W4</code>
+<table class="white-row">
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Desc</th>
+<th>Tamaño (bytes)</th>
+<th>Endianness</th>
+<th>Guardado como</th>
+<th>Valor fijo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K</td>
+<td>Token</td>
+<td>1</td>
+<td>-</td>
+<td>HEX</td>
+<td>0x1C</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Categoría Tag</td>
+<td>2</td>
+<td>little-endian</td>
+<td>HEX</td>
+<td>-</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Longitud de Datos</td>
+<td>1</td>
+<td>-</td>
+<td>HEX</td>
+<td>-</td>
+</tr>
+<tr>
+<td>C</td>
+<td>CRC32(Datos)</td>
+<td>4</td>
+<td>little-endian</td>
+<td>HEX</td>
+<td>-</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Datos</td>
+<td>n</td>
+<td>-</td>
+<td>ASCII</td>
+<td>-</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Write test?</td>
+<td>4</td>
+<td>-</td>
+<td>ASCII</td>
+<td>W_OK</td>
+</tr>
+</tbody>
+</table>
+<p class="footnote">Más info sobre el chip y cómo se almacenan datos: ver punto IV. B del informe</p>
+</div>
+ 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44850px, 23323px, -800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="swdeep" class="step future" data-x="44850" data-y="23323" data-z="-800" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>Momento de analizar el SW</h2>
+<p>Pudimos hacerlo gracias a alguien llamado <a class="link" target="_blank" href="https://twitter.com/prometheus_ar">Prometheus</a>, que <a class="link-shadow" target="_blank" href="https://github.com/prometheus-ar/vot.ar/">publicó el código fuente</a>.</p><p>
+</p><ul>
+<li>Escrito en Python.</li>
+<li>Se emplea un <i>live-dvd</i>:
+<ul>
+<li>Linux Ubuntu-based (un poco recortado).</li>
+<li>El contenido/archivo de hashes <em>no está firmado criptográficamente</em> (el DVD puede ser reemplazado sin más).</li>
+<li>No se implementa UEFI/SecureBoot.</li>
+</ul></li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44850px, 24003px, -800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-42" class="step future" data-x="44850" data-y="24003" data-z="-800" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<video controls="controls" height="480" width="854">
+<source src="index_files/angelini.asc" type="video/webm">
+Angelini sobre la maquina.
+</video>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44850px, 24623px, -800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-43" class="step future" data-x="44850" data-y="24623" data-z="-800" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<ul>
+<li>El programa se ejecuta como <em>root</em>.</li>
+<li>Credenciales de Log-in se hardcodean en archivo .json.</li>
+<li>Carece completamente de documentación (pública) y de documentación en el código.</li>
+<li>Muy pocos comentarios, incluso desacertados.</li>
+<li>Código desprolijo.</li>
+<li>Sin pruebas unitarias.</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44850px, 25038px, -800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-44" class="step future" data-x="44850" data-y="25038" data-z="-800" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>Esto hace que el código sea difícil de leer, auditar, mantener, mejorar...</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44850px, 25188px, -800px) rotateX(180deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-45" class="step future" data-x="44850" data-y="25188" data-z="-800" data-rotate-x="180" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>...pero es ideal para gestar bugs desagradables...</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44850px, 25338px, -800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-46" class="step future" data-x="44850" data-y="25338" data-z="-800" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p>...tales como <b class="scaling">#multivoto</b> y otros...</p>
+</div>
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46050px, 25238px, 700px) rotateX(0deg) rotateY(90deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="commi" class="step future" data-x="46050" data-y="25238" data-z="700" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="1">
+<h2>Inyección de Comandos</h2>
+<p>Alfredo Ortega encontró una vulnerabilidad de inyección de comandos en la rutina de generador de códigos QR.</p>
+<ol>
+<li>msa/core/clases.py, línea 190: <code>a_qr_str()</code> devuelve una lista de valores separados por comas.</li>
+<li>msa/core/clases.py, línea 206: <code>a_qr()</code> envía esos valores a la función vulnerable.</li>
+<li>msa/core/qr.py, línea 13: <code>crear_qr()</code> <strong>función vulnerable</strong>, ejecuta el comando sin sanitizar.</li>
+</ol>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46050px, 26138px, 700px) rotateX(0deg) rotateY(90deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-48" class="step future" data-x="46050" data-y="26138" data-z="700" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="1">
+<p>Esta rutina se ejecuta para imprimir el QR de los nombres del Presidente de Mesa y Fiscales.</p>
+<ul>
+<li>Nombre: <pre>Juan</pre></li>
+<li>Apellido: <pre>Perez;echo 'this is bad!'</pre></li>
+</ul>
+<p>La pantalla de ingreso de nombres sí sanitiza y tiene un límite de 
+longitud, por lo que explotar esta vulnerabilidad es complicado.</p>
+<p class="centered threat">Threat level: <i class="medium-orange">medium</i></p>
+</div> 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46450px, 27338px, 1500px) rotateX(0deg) rotateY(-90deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="multivote" class="step future" data-x="46450" data-y="27338" data-z="1500" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0" data-scale="2">
+<h2>Multivoto</h2>
+<p>Esta vulnerabilidad permite a un atacante <strong class="pastel-red">añadir varios votos</strong> al chip RFID, tantos como soporte la memoria del chip (cerca de <strong>10~12 votos</strong>).</p>
+<p><em>No es obligatorio distribuir los votos de forma especial</em>: pueden ser para un único candidato, o divirse entre varios candidatos, en la misma categoría u otra.</p>
+<p class="centered threat">Threat level: <i class="critical-purple">critical</i> (CVE-2015-6839)</p> 
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46450px, 27038px, 0px) rotateX(0deg) rotateY(-80deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-50" class="step future" data-x="46450" data-y="27038" data-z="0" data-rotate-x="0" data-rotate-y="-80" data-rotate-z="0" data-scale="1">
+<div style="width: 70%;">
+<p><em>No es posible diferenciar</em> entre una <em>boleta multivoto</em> y una <em>normal</em> a simple vista.</p>
+<p>Así que, un atacante con acceso a una impresora térmica y boletas (no es muy difícil de conseguir) <em>podría emitir votos de antemano</em> que son muy difíciles de detectar.</p>
+<p>Fue reconocido por la auditoría del Prof. Righetti en su última publicación (pero disminuido de importancia).</p>
+</div>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(45650px, 27038px, -1200px) rotateX(0deg) rotateY(-70deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-51" class="step future" data-x="45650" data-y="27038" data-z="-1200" data-rotate-x="0" data-rotate-y="-70" data-rotate-z="0" data-scale="1">
+<h4>Multivotar es fácil, solo hay que construir el string de voto</h4>
+<p>Este sería un voto normal para “Diputado” (DIP), “Jefe de Gobierno” (JEF) y “Jefe Comunal” (COM) para la CABA: <code>06CABA.1COM567DIP432JEF123</code>.</p>
+<p>Y este sería el string de <i>multivoto</i>: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> donde el Jefe de Gobierno obtuvo <em>tres votos</em> y el resto de las categorías, uno.</p>
+<p class="footnote">Ver punto IV. B. 1 y Apéndice B. C del informe</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(45650px, 27788px, -1200px) rotateX(0deg) rotateY(-70deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-52" class="step future" data-x="45650" data-y="27788" data-z="-1200" data-rotate-x="0" data-rotate-y="-70" data-rotate-z="0" data-scale="1">
+<p>Por ejemplo, es factible conseguir algo de info online, en la página de la autoridad electoral:</p>
+<div class="centered">
+<img src="index_files/login-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/" height="300" width="511">
+<img src="index_files/candidatos-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/CABA/Candidatos.json" class="right" height="600" width="360">
+</div>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44450px, 28588px, -1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="bypass" class="step future" data-x="44450" data-y="28588" data-z="-1200" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>Salteando pantalla de inicio de sesión</h2>
+<h3>Suplantar al Técnico o Presidente de Mesa</h3>
+<p class="right">Esto es trivial dado que <em>ninguna autenticación</em> es usada para con los datos del chip.</p>
+<p>Obtener algunos chips RFID y:</p>
+<ol>
+<li>Crear una boleta falsa de <i>Apertura de Mesa.</i></li>
+<li>Crear una boleta de <i>Presidente de Mesa.</i></li>
+<li>Crear una boleta de <i>Técnico.</i></li>
+</ol>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(44250px, 29688px, -1150px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-54" class="step future" data-x="44250" data-y="29688" data-z="-1150" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="2">
+<div class="overlay-img-txt txt-reduced pale-yellow">
+<img src="index_files/start-screen.jpg" alt="Home Screen" height="400" width="711">
+<span>Usar la boleta de Presidente para<br>abrir la pantalla de inicio de sesión</span>
+</div>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(46050px, 29938px, -1150px) rotateX(0deg) rotateY(-25deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-55" class="step future" data-x="46050" data-y="29938" data-z="-1150" data-rotate-x="0" data-rotate-y="-25" data-rotate-z="0" data-scale="2">
+<div class="overlay-img-txt txt-reduced pale-yellow">
+<img src="index_files/login-screen.jpg" alt="Log-in Screen" height="400" width="711">
+<span>Usar la boleta de Apertura de Mesa<br>para saltear el ingreso de PIN</span>
+</div>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(47450px, 30388px, -1000px) rotateX(0deg) rotateY(-50deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-56" class="step future" data-x="47450" data-y="30388" data-z="-1000" data-rotate-x="0" data-rotate-y="-50" data-rotate-z="0" data-scale="2">
+<div class="overlay-img-txt txt-reduced centered flag-blue">
+<img src="index_files/loggedin-screen.jpg" alt="Logged-in Screen" height="400" width="711">
+<span>¡Listo!</span>
+</div>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48150px, 30488px, 300px) rotateX(0deg) rotateY(-75deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-57" class="step future" data-x="48150" data-y="30488" data-z="300" data-rotate-x="0" data-rotate-y="-75" data-rotate-z="0" data-scale="1">
+<p>Ahora con la boleta de Técnico...</p>
+<div class="overlay-img-txt txt-reduced pale-yellow">
+<img src="index_files/maintenance-screen.jpg" alt="Maintenance screen" height="566" width="900">
+<span>...ingresar al modo mantenimiento</span>
+<span></span>
+</div>
+<p class="centered threat">Threat level: <i class="pastel-red">high</i></p> 
+<p class="txt-reduced">Permite eyectar el DVD y algunos DoS. Otra evidencia de un mal diseño...</p>
+</div>
+ 
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48150px, 32288px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="buebup" class="step future" data-x="48150" data-y="32288" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2 class="centered">Algunas palabras sobre la BUP</h2>
+<img src="index_files/bue-voto-economia.jpg" alt="voto economia" height="699" width="504">
+<p class="footnote">Infografías por <a class="link" href="https://twitter.com/rusosnith">Andres Snitcofsky</a></p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48150px, 32288px, 0px) rotateX(0deg) rotateY(90deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-59" class="step future" data-x="48150" data-y="32288" data-z="0" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="1">
+<h2></h2>
+<img src="index_files/bue-bateria.jpg" alt="bateria" height="699" width="504">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48150px, 32288px, -600px) rotateX(0deg) rotateY(90deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-60" class="step future" data-x="48150" data-y="32288" data-z="-600" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" data-scale="1">
+<h2></h2>
+<img src="index_files/bue-dvds.jpg" alt="dvds" height="699" width="504">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48750px, 32321px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-61" class="step future" data-x="48750" data-y="32321" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<img src="index_files/bue-boleta.jpg" alt="boleta" height="699" width="504">
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48750px, 33721px, 600px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-62" class="step future" data-x="48750" data-y="33721" data-z="600" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<p class="txt-tiny centered"><strong>BUE</strong> significa Boleta Única Electrónica y <strong>BUP</strong>, Boleta Única de Papel</p><p>
+</p><table class="white-row">
+<thead>
+<tr>
+<th>BUE</th>
+<th>BUP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2">Ambos: mejor que el sistema tracional (francés)</td>
+</tr>
+<tr>
+<td>~U$D 9 por voto</td>
+<td>~U$D 2 por voto</td>
+</tr>
+<tr>
+<td>1.84Kg de baterías por máquina * 9k máquinas = 16.5Tn!</td>
+<td>No requiere baterías</td>
+</tr>
+<tr>
+<td>Boletas de difícil reciclaje</td>
+<td>Facilmente reciblable</td>
+</tr>
+<tr>
+<td>1 DVD por máquina... ¿qué hacemos con ellos? ¿Posavasos?</td>
+<td>No se necesitan DVDs</td>
+</tr>
+<tr>
+<td>Escrutinio provisorio más rapido que manual (~30%)</td>
+<td>Escrutinio provisorio manual, pero podría automatizarse</td>
+</tr>
+<tr>
+<td>Es voto electrónico</td>
+<td>No es voto electrónico</td>
+</tr>
+</tbody>
+</table>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(48750px, 34921px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-63" class="step future" data-x="48750" data-y="34921" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h2>Viejas amenazas actualizadas</h2>
+<h4>Algunos ataques comunes a los sistemas electorales</h4>
+<ul>
+<li>Urna embarazada</li>
+<li>El presi-militante</li>
+<li>Voto calesita (cadena)</li>
+<li>Clientelismo</li>
+<li>Robo de boletas</li>
+<li>La tapadita</li>
+<li>El factor cartero</li>
+</ul>
+<p class="footnote">Explicación mucho más detallada <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/09/04/boleta-unica-versus-boleta-unica-electronica/">por Javier</a></p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(50050px, 35021px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(10deg) scale(1); transform-style: preserve-3d;" id="step-64" class="step future" data-x="50050" data-y="35021" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="10" data-scale="1">
+<p>No hay mayor ventaja de uno u otro sistema en ningún punto.</p>
+<p class="txt-reduced">(entonces, ¿sin mejoras respecto de un simple papel?)</p>
+<br>
+<p>Y sin embargo, este sistema introduce una nueva forma de <i>comprar votos</i>, que puede ser explotada por <em>los punteros</em>.</p>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(51350px, 35221px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(20deg) scale(1); transform-style: preserve-3d;" id="step-65" class="step future" data-x="51350" data-y="35221" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="20" data-scale="1">
+<p>Es muy fácil ocultar un teléfono celular entre la ropa con una aplicación para leer el contenido del chip:</p>
+<img src="index_files/point-men.jpg" alt="Buying votes" height="529" width="1000">
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(51350px, 37321px, 0px) rotateX(-30deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-66" class="step future" data-x="51350" data-y="37321" data-z="0" data-rotate-x="-30" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<img src="index_files/world-evoting-map.png" alt="eVoting around the world" height="700" width="953">
+<p class="footnote"><a class="link-shadow" target="_blank" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Referencia</a></p>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(51350px, 38821px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="summary" class="step future" data-x="51350" data-y="38821" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="2">
+<h1 style="text-align: center;">Resumiendo...</h1>
+<ul>
+<li>Malas técnicas de programación derivaron en <span class="pastel-red">vulnerabilidades</span>.</li>
+<li>Pésima elección del sistema de soporte/almacenamiento de votos.</li>
+<li>No satisface los <a href="#req" class="link-shadow">requerimientos:</a>
+<ul>
+<li><em>Viola</em> el secreto del voto.</li>
+<li><em>Más de un</em> voto por elector.</li>
+<li>Es <em>oscuro</em> para el votante (y para todos).</li>
+</ul>
+</li>
+<li>No se tienen ventajas significativas respecto del sistema de Boleta Única de Papel.</li>
+</ul>
+</div>
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(53850px, 38821px, 0px) rotateX(45deg) rotateY(0deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-68" class="step future" data-x="53850" data-y="38821" data-z="0" data-rotate-x="45" data-rotate-y="0" data-rotate-z="0" data-scale="2">
+<p>Como la Suprema Corte de Alemania dictaminó, de acuerdo a su Constitución:</p>
+<blockquote>Cuando se utilizan máquinas de voto electrónico, <strong>debe ser posible para el ciudadano verificar los pasos escenciales del proceso electoral</strong> y verificar los resultados de forma fiable y <strong>sin ningún conocimiento especial de experticia</strong>.</blockquote>
+ 
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(56850px, 38871px, 50px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); transform-style: preserve-3d;" id="conclusions" class="step anim slide future" data-x="56850" data-y="38871" data-z="50" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="3">
+<h1 style="text-align: center;">Conclusión</h1>
+<p>Después de todo lo visto:</p>
+<ul>
+<li>¿En verdad <em>creen</em> que es una <i>impresora</i>?</li>
+<li>Incertidumbre del resultado de la elección sin escrutinio manual (¿entonces para qué necesitamos a este sistema?)</li>
+<li>Los riesgos introducidos por el voto electrónico son mayores que sus beneficios</li>
+<li><strong>Ningún avance técnico debe debilitar la democracia</strong></li>
+</ul>
+<p><b class="positioning">Concluimos que este sistema no cumple sus objetivos e introduce riesgos al proceso electoral</b></p>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(56850px, 40871px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="step-70" class="step slide future" data-x="56850" data-y="40871" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="2">
+<h1 style="text-align: center;">¿Preguntas?</h1>
+<p>¡Esperamos que hayan disfrutado de esta presentación!. Pueden realizar cualquier pregunta, <em>sin restricciones</em>.</p>
+<p>Planteamos nosotros algunas:</p>
+<ul>
+<li>¿Resolvió MSA estos problemas?</li>
+<li>¿Ataques conocidos contra RFID?</li>
+<li>¿Puede la urna ser leída remotamente?</li>
+<li>Mencionaron BadUSB... ¿qué hay con eso?</li>
+<li>¿Qué cambios propondrían a este sistema Vot.Ar?</li>
+</ul>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(58350px, 40871px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="step-71" class="step anim slide future" data-x="58350" data-y="40871" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h1 style="text-align: center;">¡Gracias por escuchar!</h1>
+<p>Queremos también <b class="scaling">agradecer a todos</b> los que nos apoyaron:</p>
+<ul>
+<li class="txt-reduced"><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Eugenia Núñez, Sergio Orbe, Andrés Paul)</li>
+<li class="txt-reduced"><span class="soft-green">Fundación Vía Libre</span></li>
+<li class="txt-reduced"><span class="soft-green">Julio López</span> y <span class="soft-green">Tristán Grimaux</span></li>
+<li class="txt-reduced">Nuestros <span class="soft-green">amigos</span> que siempre están...</li>
+</ul>
+<p>Y a los <span class="soft-green">organizadores de la EKOparty</span> por darnos un lugar para compartir:</p>
+<ul>
+<li class="txt-reduced">Juan Pablo Daniel Borgna, Leonardo Pigñer, Federico Kirschbaum, Jerónimo Basaldúa, Francisco Amato</li>
+</ul>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(59400px, 40871px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d;" id="last" class="step slide future" data-x="59400" data-y="40871" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+<h1 style="text-align: center;">¿Más información?</h1>
+<br>
+<p>Pueden ver el informe, esta presentación y más en el repo git:</p>
+<p class="right txt-verybig"><a class="link" target="_self" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
+<br>
+<p>Feel free to share! (CC BY-SA v4.0).</p>
+<br><br><br>
+<p class="footnote">Powered by <a class="link-shadow" target="_blank" href="https://github.com/bartaz/impress.js">impress.js</a></p>
+</div>
+ 
+ 
+<div style="position: absolute; transform: translate(-50%, -50%) translate3d(60900px, 41471px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(2); transform-style: preserve-3d;" id="authors" class="step anim future" data-x="60900" data-y="41471" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="2">
+<p>Presentadores: <b class="scaling"><a class="link" target="_blank" href="https://twitter.com/hackancuba">Iván</a> &amp; <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier</a></b></p>
+<p>Colaboradores:
+<a class="link" target="_blank" href="https://twitter.com/famato">Francisco Amato</a>,
+<a class="link" target="_blank" href="https://twitter.com/FViaLibre">Enrique Chaparro</a>,
+<a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>,
+<a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>,
+<a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>,
+<a class="link" target="_blank" href="https://www.onapsis.com/blog/author/fernando-russ">Fernando Russ</a>,
+<a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>.
+</p>
+<p class="footnote">Y la gente de internet...</p>
+</div>
+ 
+ 
+ 
+</div></div>
+ 
+ 
+<div class="hint">
+<p>Utiliza las flechas del teclado para avanzar/retroceder</p>
+</div>
+<script>
+		if ("ontouchstart" in document.documentElement) { 
+		document.querySelector(".hint").innerHTML = "<p>Toca la parte derecha de la pantalla para avanzar</p>";
+		}
+	</script>
+ 
+<script src="index_files/impress.js"></script>
+<script>impress().init();</script>
+ 
+
+
+</body></html>
