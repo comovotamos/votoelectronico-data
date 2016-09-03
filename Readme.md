@@ -12,7 +12,7 @@ Sin embargo, así como la hemos compartido nosotros, podés compartirla vos sin 
 
 ## Descargar
 
-Si querés descargar toda la información aquí presente, dale click al botón verde arriba a la derecha *Clone or Download*, o bien, [click aquí](/archive/master.zip).
+Si querés descargar toda la información aquí presente, dale click al botón verde arriba a la derecha *Clone or Download*, o bien, [click aquí](https://github.com/comovotamos/votoelectronico-data/archive/master.zip).
 
 ## Colaborar
 
